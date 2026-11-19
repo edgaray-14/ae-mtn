@@ -1,0 +1,216 @@
+/* ===== (a) CSS RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mtn-yellow: #FFCC00;
+  --mtn-grey: #333333;
+  --page-bg: #f6f6f4;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--mtn-grey);
+  background: var(--page-bg);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: #FFCC00;
+  display: flex;
+  padding: 15px 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+/* Nav links */
+.navbar a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #333333;
+}
+
+.navbar a:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid #333333;
+  outline-offset: 3px;
+}
+
+.nav-links a.active {
+  border-bottom: 3px solid #333333;
+  padding-bottom: 2px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  background: var(--mtn-grey);
+}
+
+.hero img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.hero::after {
+  /* darkens the photo so the overlay text stays readable */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(51, 51, 51, 0.75) 0%, rgba(51, 51, 51, 0.15) 70%);
+}
+
+.hero-text {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 6vw;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: #FFCC00;
+  max-width: 12ch;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hero-text p {
+  color: #ffffff;
+  font-size: 1.15rem;
+  margin-top: 14px;
+  max-width: 34ch;
+}
+
+/* ===== SERVICE CARDS ===== */
+.services {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 30px;
+}
+
+.services h2 {
+  font-size: 1.8rem;
+  margin-bottom: 28px;
+}
+
+.cards {
+  display: flex;
+  gap: 24px;
+}
+
+.card {
+  flex: 1;
+  background: #ffffff;
+  border-top: 6px solid #FFCC00;
+  border-radius: 6px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 22px;
+  flex-grow: 1; /* keeps all buttons on the same line */
+}
+
+/* Yellow 'Learn More' button */
+.btn {
+  display: inline-block;
+  background: #FFCC00;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  background: #333333;
+  color: #FFCC00;
+}
+
+/* ===== PLACEHOLDER PAGE (bundles.html) ===== */
+.placeholder {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 100px 30px;
+  text-align: center;
+  min-height: 55vh;
+}
+
+.placeholder h1 {
+  font-size: 2.4rem;
+  margin-bottom: 14px;
+}
+
+.placeholder p {
+  margin-bottom: 28px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #333333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 760px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .hero img {
+    height: 360px;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+}
